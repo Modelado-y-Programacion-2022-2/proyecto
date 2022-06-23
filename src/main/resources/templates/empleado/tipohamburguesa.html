@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Resultado de búsqueda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header th:replace="fragments/header::header"></header>
+  <main>
+    <form id = "tipohamburguesa" class="form-detail" method="post" th:action="@{/menuempleado/ordenhamburguesa}">
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <!-- <button class="btn btn-primary" type="button" id="sencilla" name="sencilla" th:href="@{/menuempleado/ordenhamburguesa}">Hamburguesa Sencilla</button>
+        <button class="btn btn-primary" type="button" id="doble" name="doble" th:href="@{/menuempleado/ordenhamburguesa}">Hamburguesa Doble</button>
+        <button class="btn btn-primary" type="button" id="hawaiana" name="hawaiana" th:href="@{/menuempleado/ordenhamburguesa}">Hamburguesa Hawaiana</button> -->
+        <button form="tipohamburguesa" type="submit" name="hamburguesa" value="sencilla">Hamburguesa sencilla</button>
+        <button form="tipohamburguesa" type="submit" name="hamburguesa" value="doble">Hamburguesa doble</button>
+        <button form="tipohamburguesa" type="submit" name="hamburguesa" value="hawaiana">Hamburguesa hawaiana</button>
+      </div>
+    </form>
+  </main>
+  <footer th:replace="fragments/footer::footer"></footer>
+</body>
+
+</html>
