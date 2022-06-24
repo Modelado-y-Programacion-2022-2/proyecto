@@ -27,8 +27,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(path = "/menuempleado")
 public class EmpleadoControlador {
 
-    //@Autowired
-    //private final Inventario inventario;
+    @Autowired
+    Inventario inventario;
     
     @GetMapping("/vermenu") 
     public String verMenu() {
@@ -98,6 +98,8 @@ public class EmpleadoControlador {
         Orden orden = new Orden(hamburguesa);
         Complementos complementos = new Complementos(); 
         model.addAttribute("complementos", complementos);
+        inventario.actualizaInventarioPan("Integral", 40);
+        model.addAttribute("inventario", inventario);
         return "empleado/complementos";
     }
 

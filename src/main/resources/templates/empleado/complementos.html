@@ -33,6 +33,7 @@
                             <option value="no">No</option>
                           </select>
                         </div>
+                        <div th:text="${inventario.inventarioPan.get('Integral')}"></div>
                         <div class="form-row">
                           <label for="salsa">Tipo de Salsa</label>
                           <select id="salsa" name="salsa" class="input-text" th:field="*{salsa}">
